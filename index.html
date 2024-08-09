@@ -10,12 +10,28 @@
     <script>
         $(function () {
             let a = document.querySelectorAll('a')
+            let depth01 = document.querySelectorAll('.depth01')
+            let depth02 = document.querySelectorAll('.depth02')
+            let bg = document.querySelector('.bg')
 
             for (let i = 0; i < a.length; i++) {
                 a[i].addEventListener('click', (a) => {
                     a.preventDefault();
                 })//a.click end
             }//a.for end
+            //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+            for (let i = 0; i < depth01.length; i++) {
+                depth01[i].addEventListener('click', () => {
+                    depth01.forEach((on) => {
+                        on.classList.add('on')
+                    })//depth01.forEach end
+                    depth02.forEach((on) => {
+                        on.classList.add('on')
+                    })//depth02.forEach end
+                    bg.classList.add('on')
+                })
+            }
+            //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
         })//$function end
     </script>
 </head>
@@ -31,14 +47,17 @@
                     <li>
                         <a href="#" class="depth01">SHOP</a>
                         <ul class="depth02">
-                            <li><a href="#">마우스</a></li>
-                            <li><a href="#">키보드</a></li>
-                            <li><a href="#">웹캠 및 오디오</a></li>
-                            <li><a href="#">모바일 솔루션</a></li>
-                            <li><a href="#">신규 및 추천</a></li>
-                            <li><a href="#">비즈니스용</a></li>
-                            <li><a href="#">교육용</a></li>
-                            <li><a href="#">게이밍용</a></li>
+                            <li>
+                                <img src="img/icons8-쥐-100.png" alt="">
+                                <a href="#">마우스</a>
+                            </li>
+                            <li><img src="img/icons8-건반-100.png" alt=""><a href="#">키보드</a></li>
+                            <li><img src="img/icons8-헤드폰-100.png" alt=""><a href="#">웹캠 및 오디오</a></li>
+                            <li><img src="img/icons8-노트북-100.png" alt=""><a href="#">게이밍용</a></li>
+                            <li><img src="img/icons8-기술-항목-100.png" alt=""><a href="#">신규 및 추천</a></li>
+                            <li><img src="img/icons8-창에서의-커서-100.png" alt=""><a href="#">모바일 솔루션</a></li>
+                            <li><img src="img/icons8-마음을-가진-마우스-100.png" alt=""><a href="#">비즈니스용</a></li>
+                            <li><img src="img/icons8-클릭하고-수집-100.png" alt=""><a href="#">교육용</a></li>
                         </ul>
                     </li>
                     <li>
@@ -80,6 +99,7 @@
                 </div><!-- #form end -->
             </div><!-- .headerR end -->
         </div><!-- .inner end -->
+        <div class="bg"><span>헤더 추가배경</span></div>
     </header><!-- .header end -->
     <main class="main-visual">
         <figure>
@@ -334,21 +354,30 @@
     <footer class="footer">
         <div class="footerL">
             <ul>
-                <li>이용약관</li>
-                <li>개인정보처리방침</li>
-                <li>공지사항</li>
-                <li>홈페이지의견</li>
-                <li>회사소개</li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">홈페이지의견</a></li>
+                <li><a href="#">회사소개</a></li>
             </ul>
-            <figure><img src="img/main5-item2.png" alt=""></figure>
+            <figure><a href="#"><img src="img/main5-item2.png" alt=""></a></figure>
             <p>사업자 등록번호 : 107-86-10308 ㅣ 로지텍 코리아 대표이사 : PAD, YA-CHING</p>
             <p>주소 : 서울특별시 영등포구 여의공원로 101, CCMM 빌딩 402B</p>
             <p>고객지원센터(제품 및 AS문의처) ㅣ 대표 전화 : 02-3143-9429</p>
         </div><!-- .footerL end -->
         <div class="footerR">
-            <input type="text" placeholder="Logitech site">
+            <button>logitech site
+                <img src="img/arrow-bottom.png" alt="">
+            </button>
+            <figure>
+                <img src="img/footer-icon1.png" alt="">
+                <img src="img/footer-icon2.png" alt="">
+                <img src="img/footer-icon3.png" alt="">
+            </figure>
+            <p>ⓒ2024 로지텍. All rights reserved</p>
         </div><!-- .footerR end -->
     </footer><!-- .footer end -->
 </body>
 <!-- 임시로 적어보는 테스트용 태그 -->
+
 </html>

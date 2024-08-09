@@ -7,13 +7,27 @@
 }
 *{margin:0;padding:0;box-sizing: border-box;}
 a{text-decoration: none;color:inherit;}
-body{line-height: 1;color:333;font-family: 'Pretendard';}
+body{line-height: 1;color:#333;font-family: 'Pretendard';}
 li{list-style: none;}
 html {font-size:62.5%;}
 .header {
     width: calc(100% - 10rem - 10rem);
     margin-left: 10rem;
 }
+.header .bg {
+    width: 100%;
+    height: 45rem;
+    background-color:#fff;
+    position: absolute;
+    left: 0;
+    top: 10rem;
+    display: none;
+}
+.header .bg.on {
+    display: block;
+    z-index: 0;
+}
+.header .bg span {position:absolute;left:-99999999999px;}
 .header .inner {
     height: 100px;
     display: flex;
@@ -21,21 +35,53 @@ html {font-size:62.5%;}
     align-items: center;
 }
 .header .inner .nav {}
-.header .inner .nav ul {
+.header .inner .nav > ul {
     display: flex;
 }
-.header .inner .nav ul > li {}
+.header .inner .nav ul > li {position: relative;}
 .header .inner .nav ul > li .depth01 {
     display: block;
-    line-height: 100px;
-    height: 100px;
-    padding: 0 30px;
+    line-height: 10rem;
+    height: 10rem;
+    padding: 0 3rem;
     font-size: 1.6rem;
     font-weight: bold;
+    transition: 1s;
 }
-.header .inner .nav ul > li .depth02 {display: none;}
-.header .inner .nav ul > li .depth02 li {}
-.header .inner .nav ul > li .depth02 li a {}
+.header .inner .nav ul > li .depth01.on {padding: 0 5rem;}
+.header .inner .nav ul > li .depth02 {
+    width: 20rem;
+    position: absolute;
+    left: 30%;
+    transform: translateX(-5%);
+    top: 12rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: none;
+    z-index: 1;
+}
+.header .inner .nav ul > li:first-child ~ .depth02 {}
+.header .inner .nav ul > li .depth02 img {
+    width: 5rem;
+    /* padding-top: 2rem; */
+}
+.header .inner .nav ul > li .depth02.on {
+    display: inline;
+}
+.header .inner .nav ul > li .depth02 li {
+    display: flex;
+}
+.header .inner .nav ul > li .depth02 li a {
+    /* height: 100%; */
+    display: block;
+    /* transform: translateY(-50%); */
+    line-height: 5rem
+}
+.header .inner .nav ul > li:first-child ~ li .depth02 li a {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
 .header .inner .headerR {}
 .header .inner .headerR #form .search {
     /* border: none; */
@@ -328,7 +374,7 @@ html {font-size:62.5%;}
     justify-content: space-between  ;
 }
 .main6 .inner .item {
-    width: 71rem;
+    width: 70rem;
     height: 16.5rem;
     background-color: #f3f3f3;
     border-radius: 25px;
@@ -361,20 +407,55 @@ html {font-size:62.5%;}
 .footer .footerL ul {display: flex;}
 .footer .footerL ul li {
     font-size: 1.6rem;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
     margin-bottom: 6rem;
+    position: relative;
 }
-.footer .footerL figure {
-    margin-bottom: 4rem;
+.footer .footerL ul a {position: relative;}
+.footer .footerL ul li:not(:last-child) a:before {
+    content:'';
+    width: .1rem;
+    height: 1.6rem;
+    background-color: #fff;
+    position: absolute;
+    right: -.8rem;
+    top: 0;
 }
+.footer .footerL figure {margin-bottom: 4rem;}
 .footer .footerL p {
     line-height: 1.5;
     font-size: 1.6rem;
 }
-.footer .footerR input {
+.footer .footerR button {
     width: 24rem;
     height: 4rem;
     border-radius: 1rem;
     padding: 0 0 0 1rem;
+    line-height: 4rem;
+    color: #999999;
+    text-align: left;
+    position: relative;
+    cursor: pointer;
 }
+.footer .footerR button img {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+}
+.footer .footerR figure {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 11rem;
+}
+.footer .footerR figure img {padding-left: 2rem;}
+.footer .footerR p {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.6rem;
+}
+
 /* 필요없는 선택자 다 지울것 */
